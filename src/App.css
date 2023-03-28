@@ -1,0 +1,16 @@
+.header{
+    height: 200px;
+    width: 100%;
+    background-color:rgb(250, 248, 147);
+    color: rgb(63, 33, 235);
+    font-family:fantasy;
+    padding-top: 50px;
+}
+
+.button{
+    height: "200px";
+    width: "100%";
+    background-color:rgb(238, 73, 7);
+    color: rgb(255, 255, 255);
+    font-family:fantasy;
+}
