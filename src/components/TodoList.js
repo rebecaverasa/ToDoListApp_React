@@ -3,12 +3,24 @@ import React, { useState } from "react";
 import CreateTask from "../modals/CreateTask";
 
 const TodoList = () => {
-  const [modal, setModal] = useState(false); //definir o valor inicial de modal como falso usando o hook useState. Tambem eh criada a funcao setModal.
-  //setModal permite atualizar o estado modal posteriormente.
+  const [modal, setModal] = useState(false);
+  //const modal = useState(false).modal;
+  //const setModal = useState(false).setModal
+  const [taskList, setTaskList] = useState([]);
+  //const taskList = useState([]).taskList;
+  //const setTaskList = use.State([]).setTaskList;
+
   const toggle = () => {
     setModal(!modal);
-  }; //a funcao toggle quando eh chamada, alterna o estado do "modal" para a forma oposta do seu estado anterior.
-  //onClick: quando ha um clic, chama a funcao setModel com o valor true, exibindo a pagina modal p add task.
+  };
+
+  const saveTask = (taskObj) => {
+    let tempList = taskList;
+    tempList.push(taskObj);
+    setTaskList(tempList);
+    setModal(false)
+  };
+
   return (
     <>
       <div className="header text-center">
@@ -17,8 +29,12 @@ const TodoList = () => {
           Adicionar
         </button>
       </div>
-      <div className="task-container"></div>
-      <CreateTask toggle={toggle} modal={modal} />
+      <div className="task-container">
+        {taskList.map((obj) => (
+          <li>{obj.Name}</li>
+        ))}
+      </div>
+      <CreateTask toggle={toggle} modal={modal} save={saveTask} />
     </>
   );
 };

@@ -3,9 +3,26 @@ import React from "react";
 import { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-const CreateTask = ({ modal, toggle }) => {
+const CreateTask = ({ modal, toggle, save }) => {
   const [taskName, setTaskName] = useState("");
   const [description, setDescription] = useState("");
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+
+    if(name ==="taskname") {
+      setTaskName(value)
+    } else {
+      setDescription(value)
+    }
+  }
+
+  const handleSave = () => {
+    let taskObj = {}
+    taskObj["Name"] = taskName
+    taskObj["Description"] = description
+    save(taskObj)
+  }
 
   return (
     //Se isOpen for true, a janela modal sera renderizada. Toggle eh usado p fechar a janela apos clic em qlqr botao.
@@ -19,6 +36,8 @@ const CreateTask = ({ modal, toggle }) => {
               type="text"
               className="form-control"
               value={taskName}
+              onChange={handleChange}
+              name="taskname"
             ></input>
           </div>
           <div className="form-group">
@@ -27,12 +46,14 @@ const CreateTask = ({ modal, toggle }) => {
               rows="5"
               className="form-control"
               value={description}
+              onChange={handleChange}
+              name="description"
             ></textarea>
           </div>
         </form>
       </ModalBody>
       <ModalFooter>
-        <Button color="primary" onClick={toggle}>
+        <Button color="primary" onClick={handleSave}>
           Criar
         </Button>{" "}
         <Button color="secondary" onClick={toggle}>
