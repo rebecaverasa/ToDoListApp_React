@@ -1,5 +1,5 @@
 //componente principal
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CreateTask from "../modals/CreateTask";
 
 const TodoList = () => {
@@ -10,6 +10,15 @@ const TodoList = () => {
   //const taskList = useState([]).taskList;
   //const setTaskList = use.State([]).setTaskList;
 
+  useEffect(() => {
+    let arr = localStorage.getItem("taskList")
+
+    if(arr){
+      let obj = JSON.parse(arr)
+      setTaskList(obj)
+    }
+  }, [])
+
   const toggle = () => {
     setModal(!modal);
   };
@@ -17,6 +26,7 @@ const TodoList = () => {
   const saveTask = (taskObj) => {
     let tempList = taskList;
     tempList.push(taskObj);
+    localStorage.setItem("taskList", JSON.stringify(tempList))
     setTaskList(tempList);
     setModal(false)
   };
