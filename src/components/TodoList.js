@@ -47,16 +47,23 @@ const TodoList = () => {
     setTaskList(tempList);
     setModal(false);
   };
-
+  //AJEITAR cores
   return (
     <>
-      <div className="header text-center">
-        <h3>To-Do List</h3>
-        <button className="button mt-2" onClick={() => setModal(true)}>
-          Adicionar
+      <div className="header">
+        <h1>To-Do List</h1>
+        <button onClick={() => setModal(true)}>
+          <i class="fa-square-plus fa-regular"></i>
         </button>
       </div>
-      <div className="task-container">
+      <div
+        className="task-container"
+        link
+        rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="SUA_INTEGRITY_CODE"
+        crossorigin="anonymous"
+      >
         {taskList &&
           taskList.map((obj, index) => (
             <Card

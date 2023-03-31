@@ -1,57 +1,101 @@
-.card-wrapper{
-  width: 270px; 
-  height: 200px; 
-  box-shadow: 0px 3px 50px #A5A5A5;
-  display: flex;
-  flex-direction: column;
+html {
+  background-color: #282a36;
+  height: 100%;
 }
 
-.card-top{
+.header {
+  text-align: center;
+  height: 160px;
   width: 100%;
-  height: 2%;
+  margin: 0 auto; /* define margens automáticas para esquerda e direita */
+  color: #ff79c6;
+  font-family: fantasy;
+  padding-top: 60px;
+  background-color: #282a36;
 }
 
-.task-holder{
+.fa-square-plus {
+  padding: 0;
+  margin-top: 2px;
+  font-size: 23px;
+}
+
+.task-container {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #282a36;
+}
+
+.task-holder {
   width: 100%;
   height: 98%;
   padding: 10px 10px;
-  display : flex;
+  display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.card-header{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 30px;
-    padding: 1px 1px !important;
-    text-align: center;
-  }
-
- .task-container{
-    height: 600px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: #F6F7F8;
-    padding : 40px 100px;
-  }
-
-.header{
-    height: 200px;
-    width: 100%;
-    background-color:rgb(250, 248, 147);
-    color: rgb(63, 33, 235);
-    font-family:fantasy;
-    padding-top: 50px;
+.card-wrapper {
+  width: 265px;
+  height: 197px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 13px;
+  margin-right: 13px;
+  border-radius: 10px;
+  background-color: #BCBCB4;
 }
 
-.button{
-    height: "200px";
-    width: "100%";
-    background-color:rgb(238, 73, 7);
-    color: rgb(255, 255, 255);
-    font-family:fantasy;
+.card-top {
+  width: 100%;
+  height: 2%;
+  border-radius: 10px;
+}
+
+#card-title {
+  width: 100%;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  background-color: #bd93f9;
+  border-radius: 13px;
+  padding-left: 14px;
+  text-align: left;;
+}
+
+.description {
+  margin: 10px;
+}
+
+.cardFooter {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.fa-edit {
+  color: #282a36;
+  cursor: pointer;
+  margin-right: 7px;
+  font-size: 20px;
+}
+
+.fa-regular {
+  color: #282a36;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.card-header {
+  height: 30px;
+  padding: 1px 1px !important;
+  text-align: center;
+}
+
+.card-top {
+  background-color: #ff79c6;
 }
