@@ -3,6 +3,12 @@ html {
   height: 100%;
 }
 
+.card-header {
+  height: 30px;
+  padding: 1px 1px !important;
+  text-align: center;
+}
+
 .header {
   text-align: center;
   height: 160px;
@@ -14,10 +20,16 @@ html {
   background-color: #282a36;
 }
 
-.fa-square-plus {
-  padding: 0;
-  margin-top: 2px;
-  font-size: 23px;
+.button {
+  background-color: #282a36;
+  border-radius: 7px;
+  border: none;
+}
+
+.add-icon {
+  margin-top: 3px;
+  font-size: 30px;
+  color: #f1fa8c;
 }
 
 .task-container {
@@ -30,15 +42,6 @@ html {
   background-color: #282a36;
 }
 
-.task-holder {
-  width: 100%;
-  height: 98%;
-  padding: 10px 10px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
 .card-wrapper {
   width: 265px;
   height: 197px;
@@ -46,14 +49,29 @@ html {
   flex-direction: column;
   margin-left: 13px;
   margin-right: 13px;
+  margin-top: 26px;
   border-radius: 10px;
-  background-color: #BCBCB4;
+  background-color: #eeeaea;
+  /* definir uma altura máxima para o card */
+  max-height: 200px;
+  /* permitir que o card role se necessário */
+  overflow-y: auto;
 }
 
 .card-top {
   width: 100%;
   height: 2%;
   border-radius: 10px;
+  background-color: #ff79c6;
+}
+
+.task-holder {
+  width: 100%;
+  height: 98%;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 #card-title {
@@ -64,11 +82,34 @@ html {
   background-color: #bd93f9;
   border-radius: 13px;
   padding-left: 14px;
-  text-align: left;;
+  text-align: left;
+}
+
+.title-checked {
+  width: 100%;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  background-color: #bd93f9;
+  border-radius: 13px;
+  padding-left: 14px;
+  text-align: left;
+  text-decoration: line-through;
+  color: gray;
 }
 
 .description {
   margin: 10px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.description-checked {
+  text-decoration: line-through;
+  color: gray;
+  margin: 10px;
+  max-height: 100px;
+  overflow-y: auto;
 }
 
 .cardFooter {
@@ -77,25 +118,34 @@ html {
   bottom: 20px;
 }
 
-.fa-edit {
+.datetime-input {
+  position: absolute;
+  bottom: 3px;
+  right: 110px;
+  width: 120px;
+  height: 19px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+
+input[type="checkbox"] {
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  transform: scale(1.5);
+  margin-right: 40px;
+}
+
+.edit-icon {
   color: #282a36;
   cursor: pointer;
   margin-right: 7px;
   font-size: 20px;
 }
 
-.fa-regular {
+.delete-icon {
   color: #282a36;
   cursor: pointer;
   font-size: 20px;
-}
-
-.card-header {
-  height: 30px;
-  padding: 1px 1px !important;
-  text-align: center;
-}
-
-.card-top {
-  background-color: #ff79c6;
 }

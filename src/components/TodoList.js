@@ -5,11 +5,7 @@ import Card from "./Cards";
 
 const TodoList = () => {
   const [modal, setModal] = useState(false);
-  //const modal = useState(false).modal;
-  //const setModal = useState(false).setModal
   const [taskList, setTaskList] = useState([]);
-  //const taskList = useState([]).taskList;
-  //const setTaskList = use.State([]).setTaskList;
 
   useEffect(() => {
     let arr = localStorage.getItem("taskList");
@@ -52,8 +48,8 @@ const TodoList = () => {
     <>
       <div className="header">
         <h1>To-Do List</h1>
-        <button onClick={() => setModal(true)}>
-          <i class="fa-square-plus fa-regular"></i>
+        <button className="button" onClick={() => setModal(true)}>
+          <i class="add-icon fa-square-plus fa-regular"></i>
         </button>
       </div>
       <div
