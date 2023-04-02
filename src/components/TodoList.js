@@ -1,4 +1,3 @@
-//componente principal
 import React, { useEffect, useState } from "react";
 import CreateTask from "../modals/CreateTask";
 import Card from "./Cards";
@@ -17,19 +16,17 @@ const TodoList = () => {
   }, []);
 
   const deleteTask = (index) => {
-    let tempList = taskList;
+    let tempList = [...taskList];
     tempList.splice(index, 1);
     localStorage.setItem("taskList", JSON.stringify(tempList));
     setTaskList(tempList);
-    window.location.reload();
   };
 
   const updateListArray = (obj, index) => {
-    let tempList = taskList;
+    let tempList = [...taskList];
     tempList[index] = obj;
     localStorage.setItem("taskList", JSON.stringify(tempList));
     setTaskList(tempList);
-    window.location.reload();
   };
 
   const toggle = () => {
@@ -37,13 +34,13 @@ const TodoList = () => {
   };
 
   const saveTask = (taskObj) => {
-    let tempList = taskList;
+    let tempList = [...taskList];
     tempList.push(taskObj);
     localStorage.setItem("taskList", JSON.stringify(tempList));
     setTaskList(tempList);
     setModal(false);
   };
-  //AJEITAR cores
+
   return (
     <>
       <div className="header">
@@ -63,6 +60,7 @@ const TodoList = () => {
         {taskList &&
           taskList.map((obj, index) => (
             <Card
+              key={index}
               taskObj={obj}
               index={index}
               deleteTask={deleteTask}
