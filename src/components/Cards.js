@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import EditTask from "../modals/EditTask";
 
 const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
@@ -39,9 +39,7 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
           {taskObj.Name}
         </span>
         <p
-          className={
-            taskObj.isChecked ? "description-checked" : "description"
-          }
+          className={taskObj.isChecked ? "description-checked" : "description"}
         >
           {taskObj.Description}
         </p>
@@ -57,10 +55,7 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
             checked={taskObj.isChecked}
             onChange={handleCheck}
           />
-          <i
-            class="edit-icon fa-edit far "
-            onClick={() => setModal(true)}
-          ></i>
+          <i class="edit-icon fa-edit far " onClick={() => setModal(true)}></i>
           <i
             class="delete-icon fa-regular fa-circle-xmark"
             onClick={handleDelete}
